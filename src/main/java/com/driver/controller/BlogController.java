@@ -13,6 +13,8 @@ import java.util.List;
 @RequestMapping("/blogs")
 public class BlogController {
 
+    @Autowired BlogService blogService;
+
     @PostMapping
     public ResponseEntity createBlog(@RequestParam Integer userId ,
                                      @RequestParam String title,
@@ -27,7 +29,3 @@ public class BlogController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }
-
-
-
-
